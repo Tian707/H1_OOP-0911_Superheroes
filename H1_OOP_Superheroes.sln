@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1_OOP_Superheroes", "H2_OOP_Superheroes\H1_OOP_Superheroes.csproj", "{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H1_OOP_Superheroes", "H2_OOP_Superheroes\H1_OOP_Superheroes.csproj", "{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1_OOP_ECars", "..\H2_OOP_ECars\H1_OOP_ECars.csproj", "{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1_OOP_RemoteControlledCars", "H1_OOP_RemoteControlledCars\H1_OOP_RemoteControlledCars.csproj", "{A1954167-BA3A-4636-BC9E-36032FDE34F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1954167-BA3A-4636-BC9E-36032FDE34F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1954167-BA3A-4636-BC9E-36032FDE34F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1954167-BA3A-4636-BC9E-36032FDE34F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1954167-BA3A-4636-BC9E-36032FDE34F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
