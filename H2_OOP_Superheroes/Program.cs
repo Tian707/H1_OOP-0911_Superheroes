@@ -1,6 +1,6 @@
-﻿using H2_OOP_Superheroes.Modul;
+﻿using H1_OOP_Superheroes.Modul;
 
-namespace H2_OOP_Superheroes
+namespace H1_OOP_Superheroes
 {
     internal class Program
     {

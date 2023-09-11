@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H2_OOP_Superheroes.Modul
+namespace H1_OOP_Superheroes.Modul
 {
     public class Skill
     {

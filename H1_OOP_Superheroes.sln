@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H2_OOP_Superheroes", "H2_OOP_Superheroes\H2_OOP_Superheroes.csproj", "{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1_OOP_Superheroes", "H2_OOP_Superheroes\H1_OOP_Superheroes.csproj", "{A66029D9-B157-4F33-A36A-9F98CCA2AA8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H2_OOP_ECars", "..\H2_OOP_ECars\H2_OOP_ECars.csproj", "{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1_OOP_ECars", "..\H2_OOP_ECars\H1_OOP_ECars.csproj", "{4BDD186A-17B4-4FA3-A5AC-2B029EA3B791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
