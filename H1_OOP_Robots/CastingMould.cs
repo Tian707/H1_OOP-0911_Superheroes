@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H1_OOP_Superheroes
+namespace H1_OOP_Robot
 {
     public class CastingMould
     {

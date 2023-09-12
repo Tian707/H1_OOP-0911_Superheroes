@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            CastingMou
             Console.WriteLine("Hello, World!");
         }
     }
