@@ -27,19 +27,82 @@ namespace H1_OOP_BlackJack.Control
 
         public void Start()
         {
+            byte playerValue1, playerScore, dealerValue1, dealerScore;
+
+            // reaching close to 21:
             do
             {
+
                 _display.ClearWindow();
                 _display.GameIntro(_game.artTitle, _game.gameTitle, _game.description);
 
-                // InitializeGame, Initialize cadr list
-                // dealing 2 cards to both player and dealer and update scores
-                _game.InitializeGame();
+                // InitializeGame, Initialize card list
+                // dealing 2 cards to both player and dealer, update their scores
+
+                (playerValue1, playerScore, dealerValue1, dealerScore) = _game.InitializeGame();
+                // show value of first cards
+                _display.DisplayFirstCards(playerScore, dealerScore);
+
+                _display.HitOrStand();
+                string choice = Console.ReadLine();
+
 
             }
-            while (_game._player._score < 21 && )
+            while (playerScore < 21 && dealerScore < 21);
+
+            // blackJack:
+            if (playerScore == 21)
+            {
+                _display.BlackJack("Player");
+            }
+            else if (dealerScore == 21)
+            {
+                _display.BlackJack("Dealer");
+            }
+
+            // Bust:
+            else if (playerScore > 21)
+            {
+                _display.Bust("Player");
+            }
+            else if (dealerScore > 21)
+            {
+                _display.Bust("Dealer");
+            }
+
+
+            // win or lose
+            else if (playerScore > dealerScore)
+            {
+                _display.Bust("Player");
+            }
+            else if (dealerScore > playerScore)
+            {
+                _display.Bust("Dealer");
+            }
+            // tie
+            else if (dealerScore == playerScore)
+            {
+                _display.Tie();
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Unkonwn error");
+            }
+
+            //Ask Play New Round
+            _display.PlayNewRound();
+            ConsoleKeyInfo keyPressed = Console.ReadKey();
+            if (keyPressed.Key == ConsoleKey.Y)
+            {
+                Start();
+            }
+            else if (keyPressed.Key == ConsoleKey.N)
+            {
+                _display.Bye();
+            }
+            else { throw new ArgumentOutOfRangeException("Invalid input. Please try again."); }
+
         }
-
-
     }
 }

@@ -37,23 +37,35 @@ namespace H1_OOP_BlackJack.Model
         /// </summary>
         public Game()
         {
-            _deck = new Deck();
+            _deck = new Deck(); //InitializeDeck() when create an instance of deck
             _player = new Player();
             _dealer = new Player();
             
         }
+        /// <summary>
+        /// Initialize cards list, get card value of player's and dealer's first, update their scores
+        /// </summary>
+        /// <returns></returns>
         public (byte, byte,byte,byte) InitializeGame()
         {
+            _deck.InitializeDeck();
             Card playerCard1 = _deck.DealCard();
+            byte playerValue1;
+            Byte.TryParse(playerCard1.ToString(), out playerValue1);
+
             byte playerScore = _player.AddScore(playerCard1);
             Card playerCard2 = _deck.DealCard();
             playerScore = _player.AddScore(playerCard2);
-
+            
             Card dealerCard1 = _deck.DealCard();
-            byte dealerScore = _player.AddScore(dealerCard1);
+            byte dealerValue1;
+            Byte.TryParse(dealerCard1.ToString(), out dealerValue1);
+
+            byte dealerScore = _dealer.AddScore(dealerCard1);
             Card dealerCard2 = _deck.DealCard();
-            dealerScore = _player.AddScore(dealerCard1);
-            return 
+            dealerScore = _dealer.AddScore(dealerCard2);
+
+            return (playerValue1, playerScore, dealerValue1, dealerScore);
         }
         public byte GetPlayerScore()
         {

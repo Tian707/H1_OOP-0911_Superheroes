@@ -25,7 +25,7 @@ namespace H1_OOP_BlackJack.Model
             random = new Random();
         }
 
-        private void InitializeDeck()
+        public void InitializeDeck()
         {
             // Create a list to hold 13 cards (2 to 14)
             _cards = new List<Card>();
