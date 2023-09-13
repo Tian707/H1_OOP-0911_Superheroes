@@ -27,8 +27,7 @@ namespace H1_OOP_BlackJack.Control
         private const string gameTitle = "Black Jack";
         private const string description = "Welcome to Blackjack! Your goal is to get as close to 21 as possible without going over. \nHere's how:\n\n1. Card Values:\nNumber cards (2 to 10) are worth their face value.\nFace cards (Jack, Queen, King) are 10 points.\nAces can be 1 or 11 points, this is random.\n\n2. Gameplay:\nYou can 'Hit' for another card or 'Stand' with your current hand.\nGet 21 without busting (going over 21) to win instantly.\n\n3. Winning:\nBeat the dealer's hand without busting.\nA tie is a 'Push.'\nNow, go for 21 and have fun in Blackjack!";
 
-        // Declare an instance of Deck, Player and Dealer respectively
-        private Deck _deck;
+        // Declare an instance of Player and Dealer respectively
         private Player _player;
         private Dealer _dealer;
 
@@ -38,7 +37,6 @@ namespace H1_OOP_BlackJack.Control
         /// </summary>
         public PlayGame()
         {
-            _deck = new Deck();
             _player = new Player();
             _dealer = new Dealer();
         }

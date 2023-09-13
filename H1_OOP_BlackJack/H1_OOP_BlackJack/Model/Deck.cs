@@ -14,18 +14,24 @@ namespace H1_OOP_BlackJack.Model
         private List<Card> _cards; // List to hold the cards
         private int _currentIndex; // Index to track the current card being dealt
         private Random random; // Random number for dealing a card
-        
 
         /// <summary>
-        /// Here creates an Deck object with the initial 13 cards and a random number to deal a card
+        /// property Cards, to get the value from _cards
+        /// can access through _deck.Cards
+        /// </summary>
+        public List<Card> Cards { get => _cards; private set => _cards = value; }
+
+
+
+        /// <summary>
+        /// Here creates an Deck object with the initial cards and a random number to deal a card
         /// </summary>
         public Deck()
         {
-            InitializeDeck();
-            random = new Random();
+            _cards = InitializeDeck();
         }
 
-        public void InitializeDeck()
+        public List<Card> InitializeDeck()
         {
             // Create a list to hold 13 cards (1 to 13)
             _cards = new List<Card>();
@@ -35,6 +41,9 @@ namespace H1_OOP_BlackJack.Model
                 _cards.Add(new Card(rank));
                 
             }
+
+
+            return _cards;
         }
         /// <summary>
         /// Deal random cards to players then delete them from the array
@@ -53,9 +62,11 @@ namespace H1_OOP_BlackJack.Model
             _cards.RemoveAt(randomIndex); // Remove the card from the list.
             return dealtCard;
         }
-        public List<Card> GetDeck()
+       
+
+        public List<Card> ShuffleDeck()
         {
-            return _cards; // Return the entire deck as a List<Card>
+            return _cards;
         }
-}
+    }
 }
