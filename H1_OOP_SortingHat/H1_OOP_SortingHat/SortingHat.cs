@@ -28,7 +28,7 @@ namespace H1_OOP_SortingHat
         {
             Houses studentHouse = FindingHouse();
             Console.WriteLine($"{studentName} belongs to the House of {studentHouse}.");
-    }
+        }
     }
 }
 

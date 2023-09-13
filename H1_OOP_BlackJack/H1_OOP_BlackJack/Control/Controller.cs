@@ -44,8 +44,24 @@ namespace H1_OOP_BlackJack.Control
                 _display.DisplayFirstCards(playerValue1, dealerValue1);
 
                 _display.HitOrStand();
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine().ToLower();
+                switch(choice)
+                {
+                    case "hit"{
 
+                            return;
+                        }
+                    case "stand":
+                        {
+                            // Dealer deal new card
+
+                            return;
+                        }
+                    case default:
+                        {
+                            throw new ArgumentOutOfRangeException("Invalid input.");
+                        }
+                }
 
             }
             while (playerScore < 21 && dealerScore < 21);

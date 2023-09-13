@@ -12,6 +12,8 @@ namespace H1_OOP_BlackJack.View
         {
             Console.WriteLine("Thank you for playing. See you next time.");
         }
+        
+        
         public void HitOrStand()
         {
             Console.WriteLine("Do you want to hit or stand?");
