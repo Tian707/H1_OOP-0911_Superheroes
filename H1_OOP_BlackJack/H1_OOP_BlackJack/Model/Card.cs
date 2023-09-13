@@ -13,13 +13,13 @@ namespace H1_OOP_BlackJack.Model
         private int _rank;
 
         /// <summary>
-        /// constructor than can access rank valule 
+        /// constructor than can access rank value 
         /// </summary>
         /// <param name="rank"></param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Card(int rank)
         {
-            if (rank < 2 || rank > 14)
+            if (rank < 1 || rank > 13)
             {
                 throw new ArgumentOutOfRangeException("Invalid card rank.");
             }
@@ -38,9 +38,9 @@ namespace H1_OOP_BlackJack.Model
             {
                 rankString = "10"; // They are all worth 10 points
             }
-            else if (_rank == 14) // Ace
+            else if (_rank == 1) // Ace
             {
-                rankString = "11"; // Aces are worth 11 by default
+                rankString = "1"; // Set Ace value to 1 for now, add logic when there is a score
             }
             else
             {

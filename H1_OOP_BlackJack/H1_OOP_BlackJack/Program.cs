@@ -6,8 +6,8 @@ namespace H1_OOP_BlackJack
     {
         static void Main(string[] args)
         {
-            Controller controller = new Controller();
-            controller.Start();
+           PlayGame game = new PlayGame();
+            game.Start();
         }
     }
 }

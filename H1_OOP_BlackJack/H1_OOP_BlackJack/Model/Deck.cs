@@ -27,10 +27,10 @@ namespace H1_OOP_BlackJack.Model
 
         public void InitializeDeck()
         {
-            // Create a list to hold 13 cards (2 to 14)
+            // Create a list to hold 13 cards (1 to 13)
             _cards = new List<Card>();
 
-            for (int rank = 2; rank <= 14; rank++)
+            for (int rank = 1; rank < 14; rank++)
             {
                 _cards.Add(new Card(rank));
                 
