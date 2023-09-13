@@ -38,12 +38,12 @@ namespace H1_OOP_BlackJack.View
         {
             Console.WriteLine("It's a tie!");
         }
-        public void DisplayFirstCards(byte playerFirstCard, byte dealerFirstCard)
+        public void DisplayFirstCards(byte playerValue1, byte dealerValue1)
         {
             Console.WriteLine("Dealing two cards to the player...");
-            Console.WriteLine($"Player's first card value is {playerFirstCard}.");
+            Console.WriteLine($"Player's first card value is {playerValue1}.");
             Console.WriteLine("Dealing two cards to the dealer...");
-            Console.WriteLine($"Dealer's first card value is {dealerFirstCard}.");
+            Console.WriteLine($"Dealer's first card value is {dealerValue1}.");
         }
 
         public void GameIntro(string artTitle, string gameTitle, string description)

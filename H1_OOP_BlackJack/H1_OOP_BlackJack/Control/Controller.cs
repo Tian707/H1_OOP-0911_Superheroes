@@ -41,7 +41,7 @@ namespace H1_OOP_BlackJack.Control
 
                 (playerValue1, playerScore, dealerValue1, dealerScore) = _game.InitializeGame();
                 // show value of first cards
-                _display.DisplayFirstCards(playerScore, dealerScore);
+                _display.DisplayFirstCards(playerValue1, dealerValue1);
 
                 _display.HitOrStand();
                 string choice = Console.ReadLine();

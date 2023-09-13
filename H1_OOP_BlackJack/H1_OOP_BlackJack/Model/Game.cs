@@ -37,7 +37,7 @@ namespace H1_OOP_BlackJack.Model
         /// </summary>
         public Game()
         {
-            _deck = new Deck(); //InitializeDeck() when create an instance of deck
+            
             _player = new Player();
             _dealer = new Player();
             
@@ -48,7 +48,9 @@ namespace H1_OOP_BlackJack.Model
         /// <returns></returns>
         public (byte, byte,byte,byte) InitializeGame()
         {
-            _deck.InitializeDeck();
+            //InitializeDeck() when create an instance of deck
+            // iniyialize a new deck each time when InitializeGame()
+            _deck = new Deck(); 
             Card playerCard1 = _deck.DealCard();
             byte playerValue1;
             Byte.TryParse(playerCard1.ToString(), out playerValue1);
