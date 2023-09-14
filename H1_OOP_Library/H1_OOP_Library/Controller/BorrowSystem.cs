@@ -28,9 +28,7 @@ namespace H1_OOP_Library.Controller
             Book book8 = new Book("Moby-Dick", "Herman Melville", 1851, "9780142437247");
             Book book9 = new Book("Brave New World", "Aldous Huxley", 1932, "9780060850524");
             Book book10 = new Book("The Lord of the Rings", "J.R.R. Tolkien", 1954, "9780618640157");
-            Book book11 = new Book("test1", "J.R.R. Tolkien", 1954, "9780618640157");
-            Book book12 = new Book("test2", "J.R.R. Tolkien", 1954, "9780618640157");
-            Book book13 = new Book("test3", "J.R.R. Tolkien", 1954, "9780618640157");
+            
 
             //Add books to LendingList and inform the adding
             Display.Print(library.PopulateLendingList(book1));
@@ -43,20 +41,21 @@ namespace H1_OOP_Library.Controller
             Display.Print(library.PopulateLendingList(book8));
             Display.Print(library.PopulateLendingList(book9));
             Display.Print(library.PopulateLendingList(book10));
-            Display.Print(library.PopulateLendingList(book11));
-            Display.Print(library.PopulateLendingList(book12));
-            Display.Print(library.PopulateLendingList(book13));
+            
 
             // retrieve a book by name, add to loan and remove from lending list
-            Display.Print(library.RetrieveABookByName("test1"));
-            Display.Print(library.RetrieveABookByName("test2"));
-            Display.Print(library.RetrieveABookByName("test3"));
+            Display.Print(library.RetrieveABookByName("The Great Gatsby"));
+            Display.Print(library.RetrieveABookByName("The Lord of the Rings"));
+            Display.Print(library.RetrieveABookByName("1984"));
 
             //See the latest loan:
             Display.Print(library.ShowLatestLoanBook());
 
             //Delete the latest loan:
             Display.Print(library.DeleteLatestLoanBook());
+
+            //See the latest loan:
+            Display.Print(library.ShowLatestLoanBook());
         }
 
     }

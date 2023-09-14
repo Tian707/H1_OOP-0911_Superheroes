@@ -111,7 +111,7 @@ namespace H1_OOP_Library.Model
             try
             {
                 Book latestBook = UserLoan.Peek();
-                return $"Your latest book to borrow is \"{latestBook.Name}\"";
+                return $"Your latest book to borrow is \"{latestBook.Name}\".";
             }
             catch
             {
@@ -128,7 +128,7 @@ namespace H1_OOP_Library.Model
             try
             {
                 Book latestBook = UserLoan.Pop();
-                return $"\"{latestBook.Name}\" has been removed from ou loan.";
+                return $"\"{latestBook.Name}\" has been removed from our loan.";
             }
             catch
             {
