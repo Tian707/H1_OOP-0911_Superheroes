@@ -144,23 +144,23 @@ namespace H1_OOP_BlackJack.Control
                 {
                     //Ask Play New Round
                     Display.PlayNewRound();
-                    ConsoleKeyInfo keyPressed = Console.ReadKey();
+                    ConsoleKey keyPressed = Console.ReadKey().Key;
 
-                    if (keyPressed.Key == ConsoleKey.Y)
+                    if (keyPressed == ConsoleKey.Y)
                     {
                         // Break out of the inner loop to start a new round
                         break;
                     }
-                    else if (keyPressed.Key == ConsoleKey.N)
+                    else if (keyPressed == ConsoleKey.N)
                     {
                         Display.Bye();
                         Console.ReadKey();
                         // Exit the method or function
-                        return;
+                        Environment.Exit(0);
                     }
                     else
                     {
-                        throw new ArgumentOutOfRangeException("Invalid input. Please try again.");
+                        Display.Print("Invalid input. Please try again.");
                     }
                 }
 

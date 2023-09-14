@@ -39,25 +39,41 @@ namespace H1_OOP_TheQueue.View
             Console.WriteLine("7. Exit");
             Console.WriteLine("\nEnter the index of your choice:");
         }
+        /// <summary>
+        /// Handle the case where Console.ReadLine() returns null,
+        /// returns an error message.
+        /// This helper method encapsulates null reference fejl
+        /// and is used in all input-related methods
+        /// </summary>
+        /// <returns></returns>
+        public static string GetUserInput()
+        {
+            string userInput = Console.ReadLine();
+            if (userInput == null)
+            {
+                return "Error: Unable to read user input.";
+            }
+            return userInput;
+        }
         public static string GetUserChoice()
         {
-            return Console.ReadLine();
+            return GetUserInput();
         }
         public static string GetNewPatientName()
         {
             Print("Enter the name of the patient:");
-            return Console.ReadLine();
+            return GetUserInput();
         }
         public static string AskPatientNameForSearch()
         {
             Print("Enter the name of the patient you want to search:");
-            return Console.ReadLine();
+            return GetUserInput();
         }
 
         public static string AskIfDeleteFirstPatient()
         {
             Console.WriteLine("Do you want to delete the first patient? Y/N");
-            return Console.ReadLine();
+            return GetUserInput();
         }
         public static void ExitProgram()
         {
