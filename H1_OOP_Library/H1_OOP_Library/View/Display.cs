@@ -16,8 +16,18 @@ namespace H1_OOP_Library.View
         public static string BookWantToBorrow()
         {
             Print("Please enter the name of the book:");
-            return Console.ReadLine();
+            string? bookToRetrieve = Console.ReadLine();
+            return bookToRetrieve;
+
+
+            //char? ch = 's';
+
+            //char ch1 = ch;
+            //char ch2 = (char)ch;
+
+        
         }
+
 
 
     }
