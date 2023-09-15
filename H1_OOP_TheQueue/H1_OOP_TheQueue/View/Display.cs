@@ -48,7 +48,7 @@ namespace H1_OOP_TheQueue.View
         /// <returns></returns>
         public static string GetUserInput()
         {
-            string userInput = Console.ReadLine();
+            string? userInput = Console.ReadLine();
             if (userInput == null)
             {
                 return "Error: Unable to read user input.";
