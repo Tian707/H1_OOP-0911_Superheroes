@@ -157,12 +157,6 @@ namespace H1_OOP_BlackJack.Control
                 Display.PlayNewRound();
             }
         }
-        public void test()
-        {
-            Dealer dealer = new Dealer();
-            Card handedCard = dealer.DealingProcess();
-            dealer.UpdateHandScore(handedCard, dealer.HandScore);
-            Console.WriteLine(dealer.DealingProcess().ToString());
-        }
+       
     }
 }

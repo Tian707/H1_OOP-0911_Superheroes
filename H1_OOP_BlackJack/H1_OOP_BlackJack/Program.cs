@@ -6,7 +6,7 @@ namespace H1_OOP_BlackJack
     {
         static void Main(string[] args)
         {
-           PlayGame game = new PlayGame();
+            PlayGame game = new PlayGame();
             game.Start();
         }
     }
