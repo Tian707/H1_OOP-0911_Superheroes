@@ -32,13 +32,11 @@ namespace H1_OOP_BlackJack.Control
         private Dealer _dealer;
 
         /// <summary>
-        /// constructor for a PlayGame object, when new a PlayGame, 
-        /// initialize the instances of a shuffled Deck, a Player and a Dealer in current game
+        /// Default constructor 
         /// </summary>
         public PlayGame()
         {
-            _player = new Player();
-            _dealer = new Dealer();
+            
         }
 
 
@@ -47,6 +45,10 @@ namespace H1_OOP_BlackJack.Control
             while (true)
             {
                 // Start a new game
+                // initialize a new shuffled Deck, a new Player and a nye Dealer in current game
+                _player = new Player();
+                _dealer = new Dealer();
+
                 Display.ClearWindow();
                 Display.GameIntro(artTitle, gameTitle, description);
                 byte playerHandValue;
@@ -54,18 +56,18 @@ namespace H1_OOP_BlackJack.Control
 
                 Card playerCard1 = _dealer.DealingProcess();
                 Card playerCard2 = _dealer.DealingProcess();
-                playerHandValue = _player.UpdateHandScore(playerCard1, _player.HandScore);
+                playerHandValue = _player.UpdateHandScore(playerCard1);
 
                 Card dealerCard1 = _dealer.DealingProcess();
                 Card dealerCard2 = _dealer.DealingProcess();
-                dealerHandValue = _dealer.UpdateHandScore(dealerCard1, _dealer.HandScore);
+                dealerHandValue = _dealer.UpdateHandScore(dealerCard1);
 
                 //Show player first cads info
                 Display.DisplayFirstCards(playerHandValue, dealerHandValue);
 
                 // Update player and dealer handValue after 2 cards
-                playerHandValue = _player.UpdateHandScore(playerCard2, playerHandValue);
-                dealerHandValue = _dealer.UpdateHandScore(dealerCard2, dealerHandValue);
+                playerHandValue = _player.UpdateHandScore(playerCard2);
+                dealerHandValue = _dealer.UpdateHandScore(dealerCard2);
 
                 // Display player info:
                 Display.DisplayPlayerInfo(playerCard2, playerHandValue);
@@ -81,20 +83,20 @@ namespace H1_OOP_BlackJack.Control
                                 // New card to player, update playerScore, show player
                                 Card playerCard3 = _dealer.DealingProcess();
                                 // Update player handValue
-                                playerHandValue = _player.UpdateHandScore(playerCard3, playerHandValue);
+                                playerHandValue = _player.UpdateHandScore(playerCard3);
                                 // Display player info:
                                 Display.DisplayPlayerInfo(playerCard3, playerHandValue);
 
                                 // New card to dealer, update dealerScore
                                 Card dealerCard3 = _dealer.DealingProcess();
-                                dealerHandValue = _dealer.UpdateHandScore(dealerCard3, dealerHandValue);
+                                dealerHandValue = _dealer.UpdateHandScore(dealerCard3);
                                 break;
                             }
                         case "stand":
                             {
                                 // New card to dealer, Update dealerScore
                                 Card dealerCard4 = _dealer.DealingProcess();
-                                dealerHandValue = _dealer.UpdateHandScore(dealerCard4, dealerHandValue);
+                                dealerHandValue = _dealer.UpdateHandScore(dealerCard4);
                                 break;
                             }
                     }

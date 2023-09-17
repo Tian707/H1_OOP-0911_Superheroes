@@ -16,17 +16,6 @@ namespace H1_OOP_BlackJack.Model
 
        // public byte DealerHandScore { get => _dealerHandScore; private set => _dealerHandScore = value; }
 
-        //public byte DealerHandScore
-        //{
-        //    get => _dealerHandScore; 
-        //    set 
-        //    {
-        //        if (value < 0)
-        //        {
-        //            _dealerHandScore = value;
-        //        }
-        //    }
-        //}
 
 
         /// <summary>
@@ -38,22 +27,20 @@ namespace H1_OOP_BlackJack.Model
         {
             _deck = new Deck();
             _deck.ShuffleDeck();
-            //DealerHandScore = 0;
         }
         
         /// <summary>
         /// Each time dealing a card, we take the first card on top of the Deck,
         /// remove the handed card from the deck 
-        /// and shuffle the Deck, get ready for next Dealing
         /// </summary>
         /// <returns></returns>
         public Card DealingProcess()
         {
-            Card handedCard = _deck.ShuffleDeck().First();
+            Card handedCard = _deck.Cards.First();
             _deck.DeleteHandedCard(handedCard);
             return handedCard;
         }
 
-
+        
     }
 }

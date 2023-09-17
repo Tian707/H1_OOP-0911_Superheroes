@@ -10,39 +10,39 @@ namespace H1_OOP_BlackJack.Model
     {
         // using a private field here
         // can access to its value through constructor below, no need to set for now
-        private byte _rank;
-        private byte _faceValue = 0;
-        private byte _suit;
+        private readonly byte _rank;
+        //private byte _faceValue = 0;
+        private readonly byte _suit;
 
 
-        public byte Rank { get => _rank; private set => _rank = value; }
-        public byte Suit { get => _suit;  set => _suit = value; }
-        public byte FaceValue
-        {
-            get
-            {
-                // Calculate face value based on rank
-                if (_rank >= 1 && _rank <= 10)
-                {
-                    return _rank;
-                }
-                else if (_rank >= 11 && _rank <= 13)
-                {
-                    return 10; // Jack, Queen, and King have face value of 10
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(nameof(_rank), "Invalid card rank. Must be be.");
-                }
-            }
-            set // possibility to set the FaceValue for Ace, depending on HandValue
-            {
-                if(_rank == 1)
-                {
-                    _faceValue = value;
-                }
-            }
-        }
+        public readonly byte Rank { get => _rank;  }
+        public readonly byte Suit { get => _suit;   }
+        //public byte FaceValue
+        //{
+        //    get
+        //    {
+        //        // Calculate face value based on rank
+        //        if (_rank >= 1 && _rank <= 10)
+        //        {
+        //            return _rank;
+        //        }
+        //        else if (_rank >= 11 && _rank <= 13)
+        //        {
+        //            return 10; // Jack, Queen, and King have face value of 10
+        //        }
+        //        else
+        //        {
+        //            throw new ArgumentOutOfRangeException(nameof(_rank), "Invalid card rank. Must be be.");
+        //        }
+        //    }
+        //    set // possibility to set the FaceValue for Ace, depending on HandValue
+        //    {
+        //        if(_rank == 1)
+        //        {
+        //            _faceValue = value;
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// When generate a card in Deck, pass in rank and suit, 
@@ -71,7 +71,7 @@ namespace H1_OOP_BlackJack.Model
         /// <returns></returns>
         public override string ToString()
         {
-            return $"FaceValue: {FaceValue}, Suits: {Suit}";
+            return $"Rank: {Rank}, Suits: {Suit}";
         }
 
     }

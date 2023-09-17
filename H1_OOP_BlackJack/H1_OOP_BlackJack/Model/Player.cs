@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_BlackJack.Model
 {
-    public class Player
+
+    //interface IPlayer
+    //{
+    //    byte UpdateHandScore(Card card);
+    //}
+
+
+    public class Player 
     {
 
-        private byte _HandScore = 0;
+        private byte _handScore = 0;
 
-        public byte HandScore { get => _HandScore; private set => _HandScore = value; }
+        public byte HandScore { get => _handScore; private set => _handScore = value; }
         public Player()
         {
             HandScore = 0;
@@ -23,14 +30,23 @@ namespace H1_OOP_BlackJack.Model
         /// <param name="card"></param>
         /// <param name="currentHandScore"></param>
         /// <returns></returns>
-        public byte UpdateHandScore(Card card, byte currentHandScore)
+        public byte UpdateHandScore(Card card)
         {
-            if (currentHandScore <= 10 && card.Rank == 1)
+            if (_handScore <= 10 && card.Rank == 1)
             {
-                card.FaceValue = 11;
+                _handScore += 11;
+                //card.FaceValue = 11;
+            }
+            else if(card.Rank > 10 && card.Rank < 14)
+            {
+                _handScore += 10;
+            }
+            else
+            {
+                _handScore += card.Rank;
             }
 
-            return currentHandScore += card.FaceValue;
+            return _handScore;
         }
     }
 }
