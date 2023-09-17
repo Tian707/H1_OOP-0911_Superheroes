@@ -7,16 +7,23 @@ using ThePlanets.Control;
 
 namespace ThePlanets.Model
 {
-    internal class SolarSystem
+    internal class SolarSystem 
     {
         private List<Planet> _planets;
+
+        internal List<Planet> Planets { get => _planets; private set => _planets = value; }
 
         /// <summary>
         /// Public property to get list from Controller
         /// Declare a List
         /// </summary>
-        public List<Planet> Planets { get => _planets; private set => _planets = value; }
+        //public IReadOnlyList<Planet> Planets => _planets;
 
+
+        public void AddPlanet(Planet planet)
+        {
+            _planets.Add(planet);
+        }
 
         /// <summary>
         /// Constructor

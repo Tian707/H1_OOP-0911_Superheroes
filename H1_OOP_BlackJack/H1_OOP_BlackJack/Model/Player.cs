@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_BlackJack.Model
 {
-    internal class Player
+    public class Player
     {
-       
-        private byte _score;
 
+        private byte _HandScore = 0;
+
+        public byte HandScore { get => _HandScore; private set => _HandScore = value; }
         public Player()
         {
-            
-            _score = 0; 
+            HandScore = 0;
         }
-
-        public byte AddScore(Card card)
+        /// <summary>
+        /// Update handScore
+        /// determine the value of Ace based on the handScore
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="currentHandScore"></param>
+        /// <returns></returns>
+        public byte UpdateHandScore(Card card, byte currentHandScore)
         {
-            byte handScore;
-            bool success = Byte.TryParse(card.ToString(), out handScore);
-            if (!success)
+            if (currentHandScore <= 10 && card.Rank == 1)
             {
-                throw new ArgumentOutOfRangeException("Invalid card rank.");
+                card.FaceValue = 11;
             }
-            else
-            {
-                _score += handScore;
-            }
-            return _score;
+
+            return currentHandScore += card.FaceValue;
         }
     }
 }

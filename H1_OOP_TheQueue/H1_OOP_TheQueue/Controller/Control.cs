@@ -25,8 +25,10 @@ namespace H1_OOP_TheQueue.Controller
                 Display.ShowMenu();
 
                 // Validate user choice, tryParse userinput to an int
-                int userChoice;
-                while (!int.TryParse(Display.GetUserChoice(), out userChoice) || userChoice < 1 || userChoice > 7)
+                
+                // pack uservalidation in Display and return a bool
+                
+                while (!int.TryParse(Display.GetUserInput(), out int userChoice) || userChoice < 1 || userChoice > 7)
                 {
                     string msg = "Invalid choice, please enter a number between 1 and 7.";
                     Display.Print(msg);

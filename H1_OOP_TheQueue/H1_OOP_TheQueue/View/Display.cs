@@ -49,16 +49,33 @@ namespace H1_OOP_TheQueue.View
         public static string GetUserInput()
         {
             string? userInput = Console.ReadLine();
-            if (userInput == null)
-            {
-                return "Error: Unable to read user input.";
-            }
+
+            /* Validation beneath is unnecessary, 
+             * 
+            //if (userInput == null)
+            //{
+            //    return "Error: Unable to read user input.";
+            //}
+             * 
+             * 
+             * when it return "Error: Unable to read user input."
+             * in this:
+             * while (!int.TryParse(Display.GetUserInput(), out int userChoice) || userChoice < 1 || userChoice > 7)
+                {
+                    string msg = "Invalid choice, please enter a number between 1 and 7.";
+                    Display.Print(msg);
+                }
+            * it always fails here: int.TryParse(Display.GetUserInput()
+            */
+
+
+            
             return userInput;
         }
-        public static string GetUserChoice()
-        {
-            return GetUserInput();
-        }
+        //public static string GetUserChoice()
+        //{
+        //    return GetUserInput();
+        //}
         public static string GetNewPatientName()
         {
             Print("Enter the name of the patient:");

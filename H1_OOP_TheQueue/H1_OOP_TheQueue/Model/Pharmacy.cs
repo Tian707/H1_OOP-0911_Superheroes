@@ -36,7 +36,9 @@ namespace H1_OOP_TheQueue.Model
         /// <param name="name"></param>
         public string AddNewPatientToQueue(string name)
         {
-            QueueID++;
+            if (++QueueID > 100){
+                QueueID = 1;
+            }
             PatientsQueue.Enqueue(new Patient(name, QueueID));
             return $"{FindAPatient(name)} added to the queue.";
         }

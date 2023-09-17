@@ -12,7 +12,7 @@ namespace H1_OOP_BlackJack.Control
     /// <summary>
     /// Here starts a new game, initialize new deck, player and dealer
     /// </summary>
-    internal class PlayGame
+    public class PlayGame
     {
         //Attributes
         private const string artTitle = @" _______   ___            __       ______   __   ___           ___      __       ______   __   ___  
@@ -25,7 +25,7 @@ namespace H1_OOP_BlackJack.Control
                                                                                                     
 ";
         private const string gameTitle = "Black Jack";
-        private const string description = "Welcome to Blackjack! Your goal is to get as close to 21 as possible without going over. \nHere's how:\n\n1. Card Values:\nNumber cards (2 to 10) are worth their face value.\nFace cards (Jack, Queen, King) are 10 points.\nAces can be 1 or 11 points, this is random.\n\n2. Gameplay:\nYou can 'Hit' for another card or 'Stand' with your current hand.\nGet 21 without busting (going over 21) to win instantly.\n\n3. Winning:\nBeat the dealer's hand without busting.\nA tie is a 'Push.'\nNow, go for 21 and have fun in Blackjack!";
+        private const string description = "Welcome to Blackjack! Your goal is to get as close to 21 as possible without going over. \nHere's how:\n\n1. Card Values:\nNumber cards (2 to 10) are worth their face value.\nFace cards (Jack, Queen, King) are 10 points.\nAces will be 11 point if your current points is less than 11.\n\n2. Gameplay:\nYou can 'Hit' for another card or 'Stand' with your current hand.\nGet 21 without busting (going over 21) to win instantly.\n\n3. Winning:\nBeat the dealer's hand without busting.\nA tie is a 'Push.'\nNow, go for 21 and have fun in Blackjack!\n\n";
 
         // Declare an instance of Player and Dealer respectively
         private Player _player;
@@ -33,7 +33,7 @@ namespace H1_OOP_BlackJack.Control
 
         /// <summary>
         /// constructor for a PlayGame object, when new a PlayGame, 
-        /// initialize the instances og Deck, Player and Dealer in current game
+        /// initialize the instances of a shuffled Deck, a Player and a Dealer in current game
         /// </summary>
         public PlayGame()
         {
@@ -49,87 +49,101 @@ namespace H1_OOP_BlackJack.Control
                 // Start a new game
                 Display.ClearWindow();
                 Display.GameIntro(artTitle, gameTitle, description);
+                byte playerHandValue;
+                byte dealerHandValue;
+
+                Card playerCard1 = _dealer.DealingProcess();
+                Card playerCard2 = _dealer.DealingProcess();
+                playerHandValue = _player.UpdateHandScore(playerCard1, _player.HandScore);
+
+                Card dealerCard1 = _dealer.DealingProcess();
+                Card dealerCard2 = _dealer.DealingProcess();
+                dealerHandValue = _dealer.UpdateHandScore(dealerCard1, _dealer.HandScore);
+
+                //Show player first cads info
+                Display.DisplayFirstCards(playerHandValue, dealerHandValue);
+
+                // Update player and dealer handValue after 2 cards
+                playerHandValue = _player.UpdateHandScore(playerCard2, playerHandValue);
+                dealerHandValue = _dealer.UpdateHandScore(dealerCard2, dealerHandValue);
+
+                // Display player info:
+                Display.DisplayPlayerInfo(playerCard2, playerHandValue);
 
                 do
                 {
-
-                    //Dealing playerHand1
-                    //Dealing playerHand2
-                    //Dealing dealerHand1
-                    //Dealing dealerHand2
-                    //display playerHand1, dealerHand1
-
-                    //display playerHand2 for player
-
-                    // if one's Hand1 value=10, hand2 is Ace, score = 21, BlackJack
-                    // if not, update dealerScore and playerScore
-                    // display playerScore for player
-
-                    bool continueAsk = true;
-                    while (continueAsk)
+                    // Ask player Hit or Stand
+                    string choice = Display.HitOrStand();
+                    switch (choice)
                     {
-                        Display.HitOrStand();
-                        string choice = Console.ReadLine().ToLower();
-                        switch (choice)
-                        {
-                            case "hit":
-                                {
-                                    // New card to player, update playerScore, show player
-                                    // New card to dealer, update dealerScore
-                                    continueAsk = false;
-                                    break;
-                                }
-                            case "stand":
-                                {
-                                    // New card to dealer, Update dealerScore
-                                    continueAsk = false;
-                                    break;
-                                }
-                            default:
-                                {
-                                    throw new ArgumentOutOfRangeException("Invalid input. Please choose 'hit' or 'stand'");
-                                    // Continue the loop to ask for input again
-                                }
-                        }
+                        case "hit":
+                            {
+                                // New card to player, update playerScore, show player
+                                Card playerCard3 = _dealer.DealingProcess();
+                                // Update player handValue
+                                playerHandValue = _player.UpdateHandScore(playerCard3, playerHandValue);
+                                // Display player info:
+                                Display.DisplayPlayerInfo(playerCard3, playerHandValue);
+
+                                // New card to dealer, update dealerScore
+                                Card dealerCard3 = _dealer.DealingProcess();
+                                dealerHandValue = _dealer.UpdateHandScore(dealerCard3, dealerHandValue);
+                                break;
+                            }
+                        case "stand":
+                            {
+                                // New card to dealer, Update dealerScore
+                                Card dealerCard4 = _dealer.DealingProcess();
+                                dealerHandValue = _dealer.UpdateHandScore(dealerCard4, dealerHandValue);
+                                break;
+                            }
                     }
+
                 }
-                while (playerScore < 21 && dealerScore < 21);
+                while (playerHandValue < 21 && dealerHandValue < 21);
 
                 try
                 {
                     // Result Control:
                     // blackJack:
-                    if (playerScore == 21)
+                    if (playerHandValue == 21)
                     {
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
                         Display.BlackJack("Player");
                     }
-                    else if (dealerScore == 21)
+                    else if (dealerHandValue == 21)
                     {
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
                         Display.BlackJack("Dealer");
                     }
 
                     // Bust:
-                    else if (playerScore > 21)
+                    else if (playerHandValue > 21)
                     {
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
                         Display.Bust("Player");
                     }
-                    else if (dealerScore > 21)
+                    else if (dealerHandValue > 21)
                     {
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
                         Display.Bust("Dealer");
                     }
 
                     // win or lose
-                    else if (playerScore > dealerScore)
+                    else if (playerHandValue < dealerHandValue)
                     {
-                        Display.Bust("Player");
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
+                        Display.Print("You lose!");
                     }
-                    else if (dealerScore > playerScore)
+                    else if (dealerHandValue > playerHandValue)
                     {
-                        Display.Bust("Dealer");
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
+                        Display.Print("You win!");
                     }
                     // tie
-                    else if (dealerScore == playerScore)
+                    else if (playerHandValue == dealerHandValue)
                     {
+                        Display.Print($"Your points: {playerHandValue}, dealer score: {dealerHandValue}");
                         Display.Tie();
                     }
                 }
@@ -140,31 +154,15 @@ namespace H1_OOP_BlackJack.Control
 
 
                 //Control NewRound or Exit
-                while (true)
-                {
-                    //Ask Play New Round
-                    Display.PlayNewRound();
-                    ConsoleKey keyPressed = Console.ReadKey().Key;
-
-                    if (keyPressed == ConsoleKey.Y)
-                    {
-                        // Break out of the inner loop to start a new round
-                        break;
-                    }
-                    else if (keyPressed == ConsoleKey.N)
-                    {
-                        Display.Bye();
-                        Console.ReadKey();
-                        // Exit the method or function
-                        Environment.Exit(0);
-                    }
-                    else
-                    {
-                        Display.Print("Invalid input. Please try again.");
-                    }
-                }
-
+                Display.PlayNewRound();
             }
+        }
+        public void test()
+        {
+            Dealer dealer = new Dealer();
+            Card handedCard = dealer.DealingProcess();
+            dealer.UpdateHandScore(handedCard, dealer.HandScore);
+            Console.WriteLine(dealer.DealingProcess().ToString());
         }
     }
 }

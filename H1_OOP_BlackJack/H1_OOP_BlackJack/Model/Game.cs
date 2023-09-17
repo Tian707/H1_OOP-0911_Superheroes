@@ -22,7 +22,7 @@ namespace H1_OOP_BlackJack.Model
                                                                                                     
 ";
         public string gameTitle = "Black Jack";
-        public string description = "Welcome to Blackjack! Your goal is to get as close to 21 as possible without going over. \nHere's how:\n\n1. Card Values:\nNumber cards (2 to 10) are worth their face value.\nFace cards (Jack, Queen, King) are 10 points.\nAces can be 1 or 11 points, this is random.\n\n2. Gameplay:\nYou can 'Hit' for another card or 'Stand' with your current hand.\nGet 21 without busting (going over 21) to win instantly.\n\n3. Winning:\nBeat the dealer's hand without busting.\nA tie is a 'Push.'\nNow, go for 21 and have fun in Blackjack!";
+        public string description = "Welcome to Blackjack! Your goal is to get as close to 21 as possible without going over. \nHere's how:\n\n1. Card Values:\nNumber cards (2 to 10) are worth their face value.\nFace cards (Jack, Queen, King) are 10 pobytes.\nAces can be 1 or 11 pobytes, this is random.\n\n2. Gameplay:\nYou can 'Hit' for another card or 'Stand' with your current hand.\nGet 21 without busting (going over 21) to win instantly.\n\n3. Winning:\nBeat the dealer's hand without busting.\nA tie is a 'Push.'\nNow, go for 21 and have fun in Blackjack!";
 
         // the instance of Deck, Player and Dealer
         private Deck _deck;
@@ -46,39 +46,39 @@ namespace H1_OOP_BlackJack.Model
         /// Initialize cards list, get card value of player's and dealer's first, update their scores
         /// </summary>
         /// <returns></returns>
-        public (byte, byte,byte,byte) InitializeGame()
-        {
-            //InitializeDeck() when create an instance of deck
-            // iniyialize a new deck each time when InitializeGame()
-            _deck = new Deck(); 
-            Card playerCard1 = _deck.DealCard();
-            byte playerValue1;
-            Byte.TryParse(playerCard1.ToString(), out playerValue1);
+        //public (byte, byte,byte,byte) InitializeGame()
+        //{
+        //    //InitializeDeck() when create an instance of deck
+        //    // iniyialize a new deck each time when InitializeGame()
+        //    _deck = new Deck(); 
+        //    Card playerCard1 = _deck.DealCard();
+        //    byte playerValue1;
+        //    Byte.TryParse(playerCard1.ToString(), out playerValue1);
 
-            byte playerScore = _player.AddScore(playerCard1);
-            Card playerCard2 = _deck.DealCard();
-            playerScore = _player.AddScore(playerCard2);
+        //    byte playerScore = _player.AddScore(playerCard1);
+        //    Card playerCard2 = _deck.DealCard();
+        //    playerScore = _player.AddScore(playerCard2);
             
-            Card dealerCard1 = _deck.DealCard();
-            byte dealerValue1;
-            Byte.TryParse(dealerCard1.ToString(), out dealerValue1);
+        //    Card dealerCard1 = _deck.DealCard();
+        //    byte dealerValue1;
+        //    Byte.TryParse(dealerCard1.ToString(), out dealerValue1);
 
-            byte dealerScore = _dealer.AddScore(dealerCard1);
-            Card dealerCard2 = _deck.DealCard();
-            dealerScore = _dealer.AddScore(dealerCard2);
+        //    byte dealerScore = _dealer.AddScore(dealerCard1);
+        //    Card dealerCard2 = _deck.DealCard();
+        //    dealerScore = _dealer.AddScore(dealerCard2);
 
-            return (playerValue1, playerScore, dealerValue1, dealerScore);
-        }
-        public byte GetPlayerScore()
-        {
-            //get updated playerscore
-            return _player.AddScore(_deck.DealCard());
-        }
-        public byte GetDealererScore()
-        {
-            //get updated playerscore
-            return _player.AddScore(_deck.DealCard());
-        }
+        //    return (playerValue1, playerScore, dealerValue1, dealerScore);
+        //}
+        //public byte GetPlayerScore()
+        //{
+        //    //get updated playerscore
+        //    return _player.AddScore(_deck.DealCard());
+        //}
+        //public byte GetDealererScore()
+        //{
+        //    //get updated playerscore
+        //    return _player.AddScore(_deck.DealCard());
+        //}
 
 
     }

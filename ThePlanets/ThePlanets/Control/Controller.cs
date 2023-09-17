@@ -30,15 +30,30 @@ namespace ThePlanets.Control
             Planet Pluto = new Planet("Pluto", 0.0146f, 2370, 2095, 0.7f, -153.3f, 153.3f, 5906.4f,90.56f, 4.7f, -225, 5, false);
 
             // 2. Add Planet objects to SolarSystem, use Property List's Add()method to add new Planet to list
-            newSystem.Planets.Add(Mercury);
-            newSystem.Planets.Add(Earth);
-            newSystem.Planets.Add(Mars);
-            newSystem.Planets.Add(Jupiter);
-            newSystem.Planets.Add(Saturn);
-            newSystem.Planets.Add(Uranus);
-            newSystem.Planets.Add(Neptune);
-            newSystem.Planets.Add(Pluto);
+            newSystem.AddPlanet(Mercury);
+            newSystem.AddPlanet(Earth);
+            newSystem.AddPlanet(Mars);
+            newSystem.AddPlanet(Jupiter);
+            newSystem.AddPlanet(Saturn);
+            newSystem.AddPlanet(Uranus);
+            newSystem.AddPlanet(Neptune);
+            newSystem.AddPlanet(Pluto);
+
+            /* instead of  Control -- SolarSystem -- Planet
+             * -----newSystem.Planets.Add(Pluto);-----
+             * 
+             * we set a Add(Planet planet) method in SolarSystem
+             * so when need to add new planets to newSystem in Controller
+             * we don't need to skip SolarSystem and go to Planet
+             * but can encapsulate all Planet objects inside SolarSystem
+             * 
+             * cuz it can be dangerous, if someone say 
+             * ----var planets = newSystem.Planets;--------------
+             * ----return planets;var myPlanets = Planets, ------
+             * then get all elements within list Planets
+             */
             
+
             // 3. Print all objects in the list
             // Display.Print(newSystem.ToString());
 
