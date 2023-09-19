@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_AccessModifier_TheFirm.Model
 {
-    internal class Sweeper : Employee
+    internal class Staff :Employee
     {
-        internal Sweeper(string firstName, string lastName, string cprNr) : base(firstName, lastName, cprNr)
+       
+        internal Staff(string firstName, string lastName, string department, string cprNr, float salary) :base(firstName, lastName, department, cprNr, salary)
         {
 
         }
+        
 
         
 

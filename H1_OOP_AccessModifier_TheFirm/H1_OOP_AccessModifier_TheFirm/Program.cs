@@ -7,7 +7,7 @@ namespace H1_OOP_AccessModifier_TheFirm
         static void Main(string[] args)
         {
             EmployeeController ctrl = new EmployeeController(); 
-            ctrl.GetEmployees();
+            ctrl.Run();
         }
     }
 }

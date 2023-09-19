@@ -9,19 +9,38 @@ namespace H1_OOP_AccessModifier_TheFirm.Model
     internal class Manager : Employee
     {
 
-        
-        protected string? _tel;
-        internal string? Tel { get => _tel; private set => _tel = value; }
+        protected string _tel;
+        private string title;
+        internal HRStaff hrstaff { get; }
 
 
-        internal Manager(string firstName, string lastName, string cprNr, string tel) : base(firstName, lastName, cprNr)
+        internal string Tel { get => _tel; private set => _tel = value; }
+        protected string Title { get => title; private set => title = value; }
+
+        internal Manager(string firstName, string lastName, string department, string cprNr, float salary, string title, string tel) : base(firstName, lastName, department, cprNr, salary)
         {
+            Title = title;
             Tel = tel;
+
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()}, \nTel: {Tel}";
+            return $"{base.ToString()} {title}, \nTel: {Tel}";
+        }
+
+        public virtual string GetStaffs()
+        {
+            
+            if (hrstaff != null)
+            {
+                
+                return hrstaff.GetStaffs();
+            }
+            else
+            {
+                return "HRStaff instance not set.";
+            }
         }
 
     }
