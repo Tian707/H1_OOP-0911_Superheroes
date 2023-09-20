@@ -111,13 +111,20 @@ namespace H1_OOP_AccessModifier_TheFirm.Controller
             ceo.AddManager(budgetManager);
             ceo.AddManager(innovationManager);
 
-            // Show all chiefs
-            
-            show.Print(ceo.GetList());
-            
+            // ceo: Show all chiefs and managers 
+            show.Print("====================CEO checks chief list:====================");
+            show.Print(ceo.GetChiefList());
+            show.Print("\n====================CEO checks manager list:====================");
+            show.Print(ceo.GetManagerList());
 
-            // Show all staffs
-            show.Print(itDevManager.hrstaff.GetStaffs());
+            // manager: Show all staff 
+            show.Print("====================It Development Manager checks staff list:====================");
+            show.Print(itDevManager.GetStaffs());
+
+
+            // hrStaff: Show all staffs
+            show.Print("\n====================hrStaff checks staff list:====================");
+            show.Print(hrStaff.GetStaffs());
             
 
         }
