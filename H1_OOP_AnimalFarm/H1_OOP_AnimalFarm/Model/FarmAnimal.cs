@@ -11,9 +11,11 @@ namespace H1_OOP_AnimalFarm.Model
         protected ESpecie specie;
 
         internal ESpecie Specie { get; }
+        public int AgeInMonths { get; private set; }
         protected FarmAnimal(EType type, ESex sex, EReproduction reproduction, ELegCount legCount, EAppearanceType appearanceType, int ageInMonths, ESpecie specie) : base(type, sex, reproduction, legCount, appearanceType, ageInMonths)
         {
             this.specie = specie;
+            AgeInMonths = ageInMonths;
         }
 
         public override string LayEggOrGiveBirth()

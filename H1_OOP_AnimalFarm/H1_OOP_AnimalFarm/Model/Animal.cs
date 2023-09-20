@@ -15,12 +15,14 @@ namespace H1_OOP_AnimalFarm.Model
         protected EReproduction reproduction;
         protected ELegCount legCount;
         protected EAppearanceType appearanceType;
-        protected int ageInMonths;
+        private int ageInMonths1;
 
         // properties
         protected ESex Sex { get { return sex; } }
         protected EType Type { get { return type; } }
-        internal int AgeInMonths { get { return ageInMonths; } private set { } }
+       
+
+        protected int AgeInMonths { get => ageInMonths1; private set => ageInMonths1 = value; }
 
         //constructor
         protected Animal(EType type, ESex sex, EReproduction reproduction, ELegCount legCount, EAppearanceType appearanceType, int ageInMonths)

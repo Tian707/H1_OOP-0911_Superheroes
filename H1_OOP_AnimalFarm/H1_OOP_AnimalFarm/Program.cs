@@ -27,7 +27,7 @@ namespace H1_OOP_AnimalFarm
             FarmAnimal dog3 = new Dog(EType.Mammal, ESex.Female, EReproduction.Oviparity, ELegCount.four, EAppearanceType.ShortHaired, 8, ESpecie.Dog, "White");
 
 
-
+            Console.WriteLine("\nPopulate the animal Station:");
             Console.WriteLine(animalStation.AddAnimal(chicken1));
             Console.WriteLine(animalStation.AddAnimal(chicken2));
             Console.WriteLine(animalStation.AddAnimal(rabbit1));
@@ -35,15 +35,16 @@ namespace H1_OOP_AnimalFarm
             Console.WriteLine(animalStation.AddAnimal(dog1));
             Console.WriteLine(animalStation.AddAnimal((FarmAnimal)dog2));
             Console.WriteLine(animalStation.AddAnimal(dog3));
-            Console.WriteLine("Print all animal in the station now:");
+            Console.WriteLine("\nPrint all animal in the station now:");
             Console.WriteLine(animalStation.ToString(animalStation.FarmAnimals));
 
-            Console.WriteLine("Remove animals from the station:");
+            Console.WriteLine("\nRemove animals from the station:");
             Console.WriteLine(animalStation.DeleteAnimal((FarmAnimal)dog2));
             Console.WriteLine(animalStation.DeleteAnimal(chicken1));
             Console.WriteLine(animalStation.DeleteAnimal((FarmAnimal)rabbit2));
 
-            cw
+            Console.WriteLine("\nAge of left animals:");
+            Console.WriteLine(animalStation.GetAllLeftAnimalAgeInMonths());
         }
     }
 }

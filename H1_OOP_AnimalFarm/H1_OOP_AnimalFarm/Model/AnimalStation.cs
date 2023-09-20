@@ -81,7 +81,7 @@ namespace H1_OOP_AnimalFarm.Model
             StringBuilder stringBuilder = new StringBuilder();
             foreach(var farmAnimal in LeftAnimals)
             {
-                stringBuilder.AppendLine(farmAnimal.AgeInMonths.ToString() + "months");
+                stringBuilder.AppendLine(farmAnimal.AgeInMonths.ToString() + " months");
             }
             return stringBuilder.ToString();
         }
