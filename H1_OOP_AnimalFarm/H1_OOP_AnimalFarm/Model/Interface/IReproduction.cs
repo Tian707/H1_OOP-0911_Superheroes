@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_AnimalFarm.Model.Interface
 {
+    /// <summary>
+    /// A method for female
+    /// </summary>
     internal interface IReproduction
     {
         //ESex GetGender { get; }
