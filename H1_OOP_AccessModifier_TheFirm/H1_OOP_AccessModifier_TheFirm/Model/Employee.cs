@@ -6,42 +6,29 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_AccessModifier_TheFirm.Model
 {
-     internal class Employee
-    {
-        protected string _firstName;
-        protected string _lastName;
+     internal abstract class Employee
+      {
         private string department;
-        protected string _cprNr;
         private float salary;
 
-        internal string FirstName { get => _firstName; private set => _firstName = value; }
-        internal string LastName { get => _lastName; private set => _lastName = value; }
-        internal string CprNr { get => _cprNr; private set => _cprNr = value; }
         protected string Department { get => department; private set => department = value; }
         protected float Salary { get => salary; private set => salary = value; }
 
-
-        /// <summary>
-        /// When this class is inherited by derived classes
-        /// protected class -- no access, out of this scope, protected == private
-        /// internal, can inherited by a new class outside this scope
-        /// </summary>
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
-        /// <param name="cprNr"></param>
-        internal Employee(string firstName, string lastName, string department, string cprNr, float salary)
+ /// <summary>
+            /// When this class is inherited by derived classes
+            /// protected class -- no access, out of this scope, protected == private
+            /// internal, can inherited by a new class outside this scope
+            /// </summary>
+            /// <param name="department"></param>
+            /// <param name="salary"></param>
+        protected Employee(string department, float salary)
         {
-            FirstName = firstName;
-            LastName = lastName;
             Department = department;
-            CprNr = cprNr;
             Salary = salary;
         }
 
-        public override string ToString() 
-        {
-            return $"\nName: {FirstName} {LastName}, CPR Number: {CprNr}, Salary: {Salary}, \nDepartment: {Department}";
-        }
+        public abstract string ToString();
+        
 
     }
 }

@@ -32,21 +32,21 @@ namespace H1_OOP_AccessModifier_TheFirm.Controller
         private HRStaff hrStaff;
 
         // It staff
-        private Staff itDevStaff1;
-        private Staff itDevStaff2;
-        private Staff itDevStaff3;
-        private Staff itTestStaff1;
-        private Staff itTestStaff2;
-        private Staff itTestStaff3;
-        private Staff itProjectStaff1;
-        private Staff itProjectStaff2;
-        private Staff itProjectStaff3;
+        private Worker itDevStaff1;
+        private Worker itDevStaff2;
+        private Worker itDevStaff3;
+        private Worker itTestStaff1;
+        private Worker itTestStaff2;
+        private Worker itTestStaff3;
+        private Worker itProjectStaff1;
+        private Worker itProjectStaff2;
+        private Worker itProjectStaff3;
 
-        private Staff budgetStaff1;
-        private Staff budgetStaff2;
-        private Staff budgetStaff3;
-        private Staff innovationStaff1;
-        private Staff innovationStaff2;
+        private Worker budgetStaff1;
+        private Worker budgetStaff2;
+        private Worker budgetStaff3;
+        private Worker innovationStaff1;
+        private Worker innovationStaff2;
 
         // new list for staff
         //List<Staff> staffs = new List<Staff>();

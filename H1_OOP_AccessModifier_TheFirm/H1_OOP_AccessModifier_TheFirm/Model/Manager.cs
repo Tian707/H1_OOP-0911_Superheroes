@@ -11,13 +11,13 @@ namespace H1_OOP_AccessModifier_TheFirm.Model
 
         protected string _tel;
         private string title;
-        internal HRStaff hrstaff { get; }
+        protected HRStaff hrstaff { get; }
 
 
-        internal string Tel { get => _tel; private set => _tel = value; }
+        protected string Tel { get => _tel; private set => _tel = value; }
         protected string Title { get => title; private set => title = value; }
 
-        internal Manager(string firstName, string lastName, string department, string cprNr, float salary, string title, string tel) : base(firstName, lastName, department, cprNr, salary)
+        protected internal Manager(string firstName, string lastName, string department, string cprNr, float salary, string title, string tel) : base(firstName, lastName, department, cprNr, salary)
         {
             Title = title;
             Tel = tel;

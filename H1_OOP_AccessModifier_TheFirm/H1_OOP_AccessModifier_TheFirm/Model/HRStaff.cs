@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_AccessModifier_TheFirm.Model
 {
-    internal class HRStaff : Staff
+    internal class HRStaff : Worker
     {
-        private List<Staff> staffs;
+        private List<Worker> staffs;
         internal HRStaff(string firstName, string lastName, string department, string cprNr, float salary) :base(firstName, lastName, department, cprNr, salary)
         {
-            staffs = new List<Staff>();
+            staffs = new List<Worker>();
         }
 
 
-        public void AddStaff(Staff staff)
+        public void AddStaff(Worker staff)
         {
             staffs.Add(staff);
         }

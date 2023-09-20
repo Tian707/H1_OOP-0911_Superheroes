@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace H1_OOP_AccessModifier_TheFirm.Model
 {
-    internal class Staff :Employee
+    internal abstract class Worker : Employee
     {
        
-        internal Staff(string firstName, string lastName, string department, string cprNr, float salary) :base(firstName, lastName, department, cprNr, salary)
+        internal Worker(string department, float salary) :base(department, salary)
         {
 
         }
         
-
-        
-
     }
 }
